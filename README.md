@@ -28,7 +28,7 @@ A ideia é mostrar como um agente muda seu movimento dependendo do comportamento
 
   * Desvia de obstáculos
 
-* **Pursuit (extra)**
+* **Pursuit**
 
   * Tenta interceptar o alvo
 
@@ -76,11 +76,3 @@ Cena:
 
 * Diferença entre behaviors
   → resolvido com teclado + mouse
-
----
-
-## 📚 Referências
-
-* Material da disciplina
-* Documentação da Godot
-* Craig Reynolds
