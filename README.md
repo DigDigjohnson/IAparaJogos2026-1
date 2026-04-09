@@ -1,190 +1,86 @@
-# \# 🎮 Steering Behaviors - Godot
+# 🎮 Steering Behaviors - Godot
 
-# 
+## 📌 Sobre o projeto
 
-# \## 📌 Sobre o projeto
+Projeto feito na Godot para demonstrar alguns Steering Behaviors usados em IA de jogos.
 
-# 
+A ideia é mostrar como um agente muda seu movimento dependendo do comportamento escolhido.
 
-# Este projeto foi desenvolvido na Godot com o objetivo de implementar alguns \*\*Steering Behaviors\*\* usados em IA para jogos.
+---
 
-# 
+## 🧠 Behaviors implementados
 
-# A ideia é mostrar como um agente se movimenta de formas diferentes dependendo do comportamento escolhido.
+* **Seek / Flee**
 
-# 
+  * Seek: vai até o alvo
+  * Flee: foge quando está perto
 
-# \---
+* **Arrival / Departure**
 
-# 
+  * Arrival: chega desacelerando
+  * Departure: se afasta quando está próximo
 
-# \## 🧠 Behaviors implementados
+* **Wander**
 
-# 
+  * Movimento aleatório
 
-# \* \*\*Seek / Flee\*\*
+* **Obstacle Avoidance**
 
-# 
+  * Desvia de obstáculos
 
-# &#x20; \* Seek: o agente vai até o alvo.
+* **Pursuit (extra)**
 
-# &#x20; \* Flee: o agente foge do alvo quando chega perto.
+  * Tenta interceptar o alvo
 
-# 
+---
 
-# \* \*\*Arrival / Departure\*\*
+## 🎮 Como usar
 
-# 
+* Rode o projeto na Godot
+* Use as teclas:
 
-# &#x20; \* Arrival: o agente vai até o alvo desacelerando.
+| Tecla | Ação      |
+| ----- | --------- |
+| 1     | Seek      |
+| 2     | Arrival   |
+| 3     | Flee      |
+| 4     | Wander    |
+| 5     | Departure |
 
-# &#x20; \* Departure: o agente se afasta quando está próximo.
+* O mouse controla o Target
+* O agente reage em tempo real
 
-# 
+---
 
-# \* \*\*Wander\*\*
+## 🗂️ Estrutura
 
-# 
+* `character.gd` → agente
+* `target.gd` → alvo segue o mouse
 
-# &#x20; \* Movimento aleatório, simulando algo mais “natural”.
+Cena:
 
-# 
+* Character
+* Target
+* Obstacle
+* HUD
 
-# \* \*\*Obstacle Avoidance\*\*
+---
 
-# 
+## ⚠️ Dificuldades
 
-# &#x20; \* O agente desvia de obstáculos no caminho.
+* Wander e Flee pouco visíveis
+  → ajustei parâmetros
 
-# 
+* Avoidance interferindo
+  → usei pesos
 
-# \* \*\*Pursuit (extra)\*\*
+* Diferença entre behaviors
+  → resolvido com teclado + mouse
 
-# 
+---
 
-# &#x20; \* O agente tenta prever a posição do alvo e interceptar.
+## 📚 Referências
 
-# 
-
-# \---
-
-# 
-
-# \## 🎮 Como usar
-
-# 
-
-# \* Rode o projeto na Godot.
-
-# \* Use as teclas para trocar os comportamentos:
-
-# 
-
-# | Tecla | Ação      |
-
-# | ----- | --------- |
-
-# | 1     | Seek      |
-
-# | 2     | Arrival   |
-
-# | 3     | Flee      |
-
-# | 4     | Wander    |
-
-# | 5     | Departure |
-
-# 
-
-# \* O mouse controla o alvo (Target).
-
-# \* O agente reage em tempo real.
-
-# \* Existe um obstáculo na cena que o agente tenta evitar.
-
-# 
-
-# \---
-
-# 
-
-# \## 🗂️ Estrutura do projeto
-
-# 
-
-# \* `character.gd` → script principal do agente
-
-# \* `target.gd` → faz o alvo seguir o mouse
-
-# \* Cena principal contém:
-
-# 
-
-# &#x20; \* Character (agente)
-
-# &#x20; \* Target
-
-# &#x20; \* Obstacle
-
-# &#x20; \* HUD
-
-# 
-
-# Cada comportamento foi implementado em uma função separada no script.
-
-# 
-
-# \---
-
-# 
-
-# \## ⚠️ Dificuldades
-
-# 
-
-# \* Alguns behaviors não apareciam direito (tipo Wander e Flee)
-
-# &#x20; → resolvido ajustando parâmetros
-
-# 
-
-# \* Obstacle avoidance interferia nos outros
-
-# &#x20; → resolvido usando pesos e aplicando só quando necessário
-
-# 
-
-# \* Difícil ver diferença entre behaviors
-
-# &#x20; → resolvido com troca por teclado e target seguindo o mouse
-
-# 
-
-# \---
-
-# 
-
-# \## 📚 Referências
-
-# 
-
-# \* Material da disciplina
-
-# \* Documentação da Godot Engine
-
-# \* Artigo do Craig Reynolds sobre Steering Behaviors
-
-# 
-
-# \---
-
-# 
-
-# \## ✅ Observação
-
-# 
-
-# O projeto permite testar os comportamentos em tempo real e entender melhor como eles funcionam na prática.
-
-
-
+* Material da disciplina
+* Documentação da Godot
+* Craig Reynolds
