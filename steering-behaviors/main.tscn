@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bebj6rc2a7rr8"]
+
+[ext_resource type="Script" uid="uid://dk85y4m2gyo2f" path="res://character.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cweo66wj3pvp4" path="res://character.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cj5mt2h7a3p08" path="res://npc.png" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://64qsw4e06k52" path="res://target.gd" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://u33p0wlvoshx" path="res://obstacle.png" id="4_1bvp3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2yge"]
+radius = 121.0
+height = 242.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bvp3"]
+radius = 113.15918
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
+radius = 127.45587
+
+[node name="Main" type="Node2D" unique_id=25875177]
+
+[node name="Character" type="CharacterBody2D" parent="." unique_id=62472965]
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character" unique_id=1322666920]
+position = Vector2(132, 143)
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=786295290]
+position = Vector2(137, 135)
+shape = SubResource("CapsuleShape2D_h2yge")
+
+[node name="Target" type="Node2D" parent="." unique_id=79581423]
+position = Vector2(1710, 873)
+script = ExtResource("3_lquwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Target" unique_id=1924227017]
+texture = ExtResource("3_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target" unique_id=1328230301]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_1bvp3")
+
+[node name="Obstacle" type="StaticBody2D" parent="." unique_id=130735187 groups=["Obstacles"]]
+position = Vector2(944, 507)
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle" unique_id=480010200]
+texture = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle" unique_id=1191785692]
+shape = SubResource("CircleShape2D_h2yge")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2100817681]
+
+[node name="Label" type="Label" parent="HUD" unique_id=903090736]
+anchors_preset = -1
+offset_left = -10.0
+offset_top = 551.0
+offset_right = 297.0
+offset_bottom = 645.0
+metadata/_edit_use_anchors_ = true
